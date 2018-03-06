@@ -1,0 +1,82 @@
+export default [
+	{
+		cuisine: 'Italian',
+		title: 'Spaghetti with meatballs',
+		image: 'https://i.pinimg.com/564x/1a/f6/ad/1af6adf8f05a4c58dd69804b3b0c66e9.jpg',
+		duration: '30 min',
+		preparation: 'Em uma frigideira, coloque 1 colher do azeite e doure o alho. Reserve. Na mesma frigideira, acrescente o restante do azeite e doure os cogumelos e, em seguida, junte os tomates. Refogue rapidamente. Tempere com o sal e a pimenta. Misture o alho reservado, a salsa e, por último, a massa. Sirva em seguida. *Receita sugerida pela […]',
+		ingredients: [
+			'300 g macarrão espaguete integral cozido al dente',
+			'3 colheres (sopa) de azeite de oliva extravirgem',
+			'4 dentes de alho picados',
+			'1 1/2 xícara (chá) de cogumelo shiitake fatiado',
+			'1 1/2 xícara (chá) de cogumelo-de-paris',
+			'20 tomate cereja cortados no meio',
+			' sal pimenta-do-reino e tirinhas de pimenta dedo-de-moça a gosto',
+			'salsa picada a gosto'
+		],
+		makesAmount: 4,
+	},
+	{
+		cuisine: 'Dessert',
+		title: 'Strawberry and chocolate cake',
+		image: 'https://i.pinimg.com/564x/fa/8a/d0/fa8ad08c0904457e0e15c24d84aa2d87.jpg',
+		duration: '75 min',
+		Preparation: 'Em uma frigideira, coloque 1 colher do azeite e doure o alho. Reserve. Na mesma frigideira, acrescente o restante do azeite e doure os cogumelos e, em seguida, junte os tomates. Refogue rapidamente. Tempere com o sal e a pimenta. Misture o alho reservado, a salsa e, por último, a massa. Sirva em seguida. *Receita sugerida pela […]',
+		ingredients: [
+			'6 morangos',
+			'12 marshmallows tamanho médio',
+			'6 mini brownies',
+			'calda de chocolate Hersheys'
+		],
+		makesAmount: 2,
+	},
+	{
+		cuisine: 'Healthy',
+		title: 'Chicken avocado salad',
+		image: 'https://i.pinimg.com/564x/a5/4d/4d/a54d4d37522a76a67002fa25b8e51515.jpg',
+		duration: '35 min',
+		preparation: 'Juicy griddled Cajun chicken with charred veggies and coriander-lime rice – ready in 30 minutes. A great weeknight dinner!',
+		ingredients: [
+			'2 peitos de frango sem pele',
+			'1 abacate',
+			'1 cebola pequena',
+			'1 punhado de Coriander',
+			'1/2 pimenta verde',
+			'1/2 pimenta vermelha',
+			'1/2 pimenta amarela',
+			'1 limao Zest',
+			'1 colher de chá de Cajun',
+			'1 e 1/2 colher de chá de azeite de oliva',
+		],
+		makesAmount: 3,
+	},
+	{
+		cuisine: 'Snacks',
+		title: 'Tomatoe tapas',
+		image: 'https://i.pinimg.com/564x/22/f0/78/22f078f1c0d3f39f604cae30c27e9b0d.jpg',
+		duration: '10 min',
+		preparation: 'August 24, 2015 by Annie Chesson Leave a Comment I am kind of obsessed with bruschetta. Aaaand by kind of obsessed I mean one hundred percent obsessed. Obviously. Which is really very strange.',
+		ingredients: [
+			'6 pães franceses',
+			'6 tomates grandes',
+			'Salsa picada a gosto',
+			'Pimenta do reino',
+		],
+		makesAmount: 6,
+	},
+	{
+		cuisine: 'Japanese',
+		title: 'Sushi',
+		image: 'https://i.pinimg.com/564x/52/c7/33/52c733b033e709cc4166c8b1090da1af.jpg',
+		duration: '80 min',
+		preparation: 'Source Oh, yum! I am so in the mood for sushi! It’s been too long since I’ve had any! I could east sushi every day. Roasted Cheesy Potato and Ham Soup in Pretzel Bowls – Pure perfection!',
+		ingredients: [
+			'1 posta de salmão sem pele',
+			'2 abacates',
+			'300g arroz japonês',
+			'4 folhas de alga',
+		],
+		makesAmount: 2,
+	}
+];
