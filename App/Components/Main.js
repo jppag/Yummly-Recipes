@@ -7,6 +7,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableHighlight,
+  Animated,
+  Easing,
 } from 'react-native';
 import Svg, {
   Path,
@@ -20,8 +22,8 @@ import Food from './Food';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    marginTop: 88,
+    backgroundColor: '#2c333a99',
+    paddingTop: 88,
     height: '100%',
     width: '100%',
   },
@@ -60,8 +62,9 @@ const styles = StyleSheet.create({
   itemDescription: {
     color: '#f9f9f9c7',
     fontSize: 10,
-    fontWeight: 'bold',
+    fontWeight: '700',
     fontFamily: 'Avenir',
+    letterSpacing: 1.5,
   },
   durationContent: {
     flexDirection: 'row',
@@ -92,16 +95,43 @@ class Main extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.animatedShowValue = new Animated.Value(20);
+    this.animatedOpacityValue = new Animated.Value(0);
+  }
+
+  componentDidMount() {
+    Animated.stagger(70, [
+      Animated.timing(this.animatedShowValue, {
+        toValue: 0,
+        duration: 300,
+        easing: Easing.ease,
+      }),
+      Animated.timing(this.animatedOpacityValue, {
+        toValue: 1,
+        duration: 200,
+        easing: Easing.ease,
+      }),
+    ]).start();
+  }
+
   checkItemInfoHandler(item) {
     this.props.navigator.push({
       component: Food,
-      title: item.title,
+      title: item.cuisine,
       passProps: { food: item },
+      translucent: true,
       navigationBarHidden: true,
     });
   }
 
 	render() {
+    const animatedShow = {
+      transform: [{
+        translateY: this.animatedShowValue,
+      }],
+      opacity: this.animatedOpacityValue,
+    };
 		return (
       <ScrollView
         style={styles.container}
@@ -122,7 +152,7 @@ class Main extends React.Component {
               <View
                 style={styles.overlay}
               >
-                <View style={styles.durationContent}>
+                <Animated.View style={[styles.durationContent, animatedShow]}>
                   <Svg style={styles.iconContainer} viewbox='0 0 32 32'>
                     <G style={styles.icon}>
                       <Path
@@ -133,11 +163,11 @@ class Main extends React.Component {
                     </G>
                   </Svg>
                   <Text style={styles.duration}>{item.duration}</Text>
-                </View>
-                <View style={styles.itemContent}>
+                </Animated.View>
+                <Animated.View style={[styles.itemContent, animatedShow]}>
                   <Text style={styles.itemDescription}>{item.cuisine.toUpperCase()}</Text>
                   <Text style={styles.itemTitle}>{item.title}</Text>
-                </View>
+                </Animated.View>
               </View>
             </View>
           </TouchableHighlight>

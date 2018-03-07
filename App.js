@@ -20,6 +20,7 @@ export default class App extends React.Component {
         initialRoute={{
           title: 'Cuisines',
           component: Main,
+          barStyle: 'black',
         }}
       />
     );
