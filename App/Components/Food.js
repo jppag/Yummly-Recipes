@@ -52,18 +52,18 @@ const styles = {
 		justifyContent: 'flex-end', 
 		flex: 1,
 		height: height,
-		width: '100%',
+		width: '85%',
 		padding: 20,
 		paddingBottom: 50,
 	},
 	title: {
-		fontSize: 50,
-		lineHeight: 45,
+		fontSize: 40,
+		lineHeight: 50,
 		letterSpacing: 0.0025,
 		paddingTop: 20,
 		color: '#fff',
 		fontWeight: 'bold',
-		fontFamily: 'Avenir',
+		fontFamily: 'Georgia',
 	},
 	descriptionItem: {
 		marginTop: 10,
@@ -84,7 +84,7 @@ const styles = {
 		paddingBottom: 40,
 	},
 	infoTitle: {
-		fontFamily: 'Avenir',
+		fontFamily: 'Georgia',
 		fontSize: 28,
 		fontWeight: 'bold',
 		color: '#333',
@@ -93,7 +93,7 @@ const styles = {
 	},
 	infoDescription: {
 		color: '#777',
-		fontFamily: 'Georgia',
+		fontFamily: 'Avenir',
 		fontSize: 16,
 		lineHeight: 24,
 		letterSpacing: 0.5,
@@ -104,7 +104,7 @@ const styles = {
 		marginTop: 20,
 	},
 	infoSectionTitle: {
-		fontFamily: 'Avenir',
+		fontFamily: 'Georgia',
 		fontSize: 18,
 		fontWeight: 'bold',
 		color: '#333',
@@ -128,14 +128,14 @@ const styles = {
 		position: 'relative',
 	},
 	iconTop: {
-		top: 10,
+		top: 8,
 	},
   icon: {
     width: 32,
     height: 32,
 	},
 	iconText: {
-		fontFamily: 'Georgia',
+		fontFamily: 'Avenir',
 		fontSize: 15,
 		color: '#777',
 	},
@@ -146,7 +146,7 @@ const styles = {
 	},
 	listItemText: {
 		color: '#777',
-		fontFamily: 'Georgia',
+		fontFamily: 'Avenir',
 		fontSize: 16,
 		paddingRight: 15,
 		lineHeight: 20,

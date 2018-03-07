@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
   itemTitle: {
     color: '#fff',
     fontSize: 26,
-    lineHeight: 24,
+    lineHeight: 28,
     fontWeight: 'bold',
     marginBottom: 10,
-    paddingTop: 20,
+    paddingTop: 10,
     maxWidth: '60%',
-    fontFamily: 'Avenir',
+    fontFamily: 'Georgia',
   },
   itemDescription: {
     color: '#f9f9f9c7',
