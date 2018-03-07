@@ -4,7 +4,7 @@ export default [
 		title: 'Spaghetti with tomatoes and mushrooms',
 		image: 'https://i.pinimg.com/564x/1a/f6/ad/1af6adf8f05a4c58dd69804b3b0c66e9.jpg',
 		duration: '30 min',
-		description: `just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
+		description: `Just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
 		directions: 'Put the lentils into a large mixing bowl. Scoop out the seedy center and finely dice the cucumbers. Do the same with the tomatoes and red pepper. The smaller the dice, the easier to scoop with a cracker. Add them to the mixing bowl. Add the red onion, olives, parsley, oregano, salt, pepper flakes, olive oil and vinegar and stir to mix. Gently stir in the crumbled feta and taste for seasonings. ',
 		ingredients: [
 			'300 g macarrão espaguete integral cozido al dente',
@@ -23,7 +23,7 @@ export default [
 		title: 'Strawberry and chocolate cake',
 		image: 'https://i.pinimg.com/564x/fa/8a/d0/fa8ad08c0904457e0e15c24d84aa2d87.jpg',
 		duration: '75 min',
-		description: `just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
+		description: `Just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
 		directions: 'Put the lentils into a large mixing bowl. Scoop out the seedy center and finely dice the cucumbers. Do the same with the tomatoes and red pepper. The smaller the dice, the easier to scoop with a cracker. Add them to the mixing bowl. Add the red onion, olives, parsley, oregano, salt, pepper flakes, olive oil and vinegar and stir to mix. Gently stir in the crumbled feta and taste for seasonings. ',
 		ingredients: [
 			'6 morangos',
@@ -38,7 +38,7 @@ export default [
 		title: 'Cajun Chicken with Coriander and Lime Rice',
 		image: 'https://i.pinimg.com/564x/a5/4d/4d/a54d4d37522a76a67002fa25b8e51515.jpg',
 		duration: '35 min',
-		description: `just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
+		description: `Just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
 		directions: 'Put the lentils into a large mixing bowl. Scoop out the seedy center and finely dice the cucumbers. Do the same with the tomatoes and red pepper. The smaller the dice, the easier to scoop with a cracker. Add them to the mixing bowl. Add the red onion, olives, parsley, oregano, salt, pepper flakes, olive oil and vinegar and stir to mix. Gently stir in the crumbled feta and taste for seasonings. ',
 		ingredients: [
 			'2 peitos de frango sem pele',
@@ -59,7 +59,7 @@ export default [
 		title: 'Perfect Bruschetta',
 		image: 'https://i.pinimg.com/564x/22/f0/78/22f078f1c0d3f39f604cae30c27e9b0d.jpg',
 		duration: '10 min',
-		description: `just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
+		description: `Just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
 		directions: 'Put the lentils into a large mixing bowl. Scoop out the seedy center and finely dice the cucumbers. Do the same with the tomatoes and red pepper. The smaller the dice, the easier to scoop with a cracker. Add them to the mixing bowl. Add the red onion, olives, parsley, oregano, salt, pepper flakes, olive oil and vinegar and stir to mix. Gently stir in the crumbled feta and taste for seasonings. ',
 		ingredients: [
 			'6 pães franceses',
@@ -74,7 +74,7 @@ export default [
 		title: 'Sushi',
 		image: 'https://i.pinimg.com/564x/52/c7/33/52c733b033e709cc4166c8b1090da1af.jpg',
 		duration: '80 min',
-		description: `just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
+		description: `Just really enjoyed the book and Jessica's perspective. Perhaps I feel swept up in some sort of tide myself. Anyway. Erin made this chunky Greek salad with tomato halves, slices of cucumber, whole olives and feta cheese scattered throughout. It seemed so rustic but classic and I could have eaten the entire bowl.`,
 		directions: 'Put the lentils into a large mixing bowl. Scoop out the seedy center and finely dice the cucumbers. Do the same with the tomatoes and red pepper. The smaller the dice, the easier to scoop with a cracker. Add them to the mixing bowl. Add the red onion, olives, parsley, oregano, salt, pepper flakes, olive oil and vinegar and stir to mix. Gently stir in the crumbled feta and taste for seasonings. ',
 		ingredients: [
 			'1 posta de salmão sem pele',

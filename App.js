@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet,
   NavigatorIOS,
+  TabBarIOS,
 } from 'react-native';
 
 import Main from './App/Components/Main';
@@ -20,7 +21,7 @@ export default class App extends React.Component {
         initialRoute={{
           title: 'Cuisines',
           component: Main,
-          barStyle: 'black',
+          navigationBarHidden: true,
         }}
       />
     );

@@ -7,11 +7,15 @@ import {
 	Image,
 	TouchableHighlight,
 	ScrollView,
+	Animated,
+	Easing,
 } from 'react-native';
 import Svg, {
   Path,
   G,
 } from 'react-native-svg';
+
+import Header from './Header';
 
 const {height, width} = Dimensions.get('window');
 
@@ -20,42 +24,6 @@ const styles = {
 		flex: 1,
 		height: '100%',
 		width: '100%',
-	},
-	header: {
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		backgroundColor: '#2c333a99',
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'center',
-		width: '100%',
-		height: 85,
-		paddingTop: 20,
-		zIndex: 1,
-		flex: 1,
-	},
-	backButtonContainer: {
-		position: 'absolute',
-		bottom: 15,
-		left: 20,
-	},
-	backButton: {
-		width: 13,
-		height: 13,
-		borderBottomColor: '#fff',
-		borderBottomWidth: 3,
-		borderLeftColor: '#fff',
-		borderLeftWidth: 3,
-		transform: [{rotate: '45deg'}],
-	},
-	cuisineTitle: {
-		fontFamily: 'Avenir',
-		color: '#fff',
-		fontWeight: 'bold',
-		fontSize: 14,
-		marginTop: 25,
-		letterSpacing: 3,
 	},
 	overlay: {
 		position: 'absolute',
@@ -120,7 +88,7 @@ const styles = {
 		fontSize: 28,
 		fontWeight: 'bold',
 		color: '#333',
-		marginBottom: 0,
+		marginBottom: 20,
 		marginTop: 20,
 	},
 	infoDescription: {
@@ -197,6 +165,28 @@ const styles = {
 class Food extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.goBackToPreviousScreen = this.goBackToPreviousScreen.bind(this);
+	}
+
+	componentWillMount() {
+		this.animatedShowValue = new Animated.Value(20);
+		this.animatedOpacityValue = new Animated.Value(0);
+	}
+
+	componentDidMount() {
+		Animated.stagger(70, [
+			Animated.timing(this.animatedShowValue, {
+				toValue: 0,
+				duration: 600,
+				easing: Easing.ease,
+			}),
+			Animated.timing(this.animatedOpacityValue, {
+				toValue: 1,
+				duration: 400,
+				easing: Easing.ease,
+			}),
+		]).start();
 	}
 
 	goBackToPreviousScreen() {
@@ -205,17 +195,22 @@ class Food extends React.Component {
 
 	render() {
 		const food = this.props.food;
+		const growAnimation = {
+			transform: [{scale: this.animatedBackgroundGrowValue}],
+		};
+		const animatedShow = {
+      transform: [{
+        translateY: this.animatedShowValue,
+      }],
+      opacity: this.animatedOpacityValue,
+    };
+
 		return(
 			<View style={styles.container}>
-				<View style={styles.header}>
-					<TouchableHighlight
-						style={styles.backButtonContainer}
-						onPress={this.goBackToPreviousScreen.bind(this)}
-					>
-						<View style={styles.backButton} />
-					</TouchableHighlight>
-					<Text style={styles.cuisineTitle}>{food.cuisine.toUpperCase()}</Text>
-				</View>
+				<Header
+					title={food.cuisine.toUpperCase()}
+					goBackToPreviousScreen={this.goBackToPreviousScreen}
+				/>
 				<View style={styles.imageContainer}>
 					<View style={styles.overlay} />
 					<Image
@@ -227,9 +222,9 @@ class Food extends React.Component {
 					automaticallyAdjustContentInsets={false}
 				>
 					<View style={styles.mainContent}>
-						<View style={styles.innerContent}>
+						<Animated.View style={[styles.innerContent, animatedShow]}>
 							<Text style={styles.title}>{food.title}</Text>
-						</View>
+						</Animated.View>
 					</View>
 					<View style={styles.infoContainer}>
 						<Text style={styles.infoTitle}>About this dish</Text>
