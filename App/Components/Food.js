@@ -10,6 +10,7 @@ import {
 	Animated,
 	Easing,
 	ActivityIndicator,
+	Linking,
 } from 'react-native';
 import Svg, {
   Path,
@@ -107,7 +108,7 @@ const styles = {
 	infoSectionTitle: {
 		fontFamily: 'Georgia',
 		fontSize: 18,
-		fontWeight: 'bold',
+		fontWeight: '600',
 		color: '#333',
 		marginBottom: 20,
 		marginTop: 30,
@@ -152,6 +153,9 @@ const styles = {
 		paddingRight: 15,
 		lineHeight: 20,
 	},
+	listItemTextWidth: {
+		minWidth: 80,
+	},
 	listItemBullet: {
 		width: 5,
 		height: 5,
@@ -161,6 +165,34 @@ const styles = {
 		position: 'relative',
 		top: 9,
 	},
+	percentageListItem: {
+		width: '90%',
+		alignItems: 'center',
+	},
+	amountPercentage: {
+		height: 5,
+		backgroundColor: '#333333cc',
+		borderRadius: 10,
+	},
+	buttonContainer: {
+		marginTop: 30,
+		marginBottom: 30,
+		width: '100%',
+	},
+	button: {
+		backgroundColor: '#2c333a',
+		height: 60,
+		width: '100%',
+		borderRadius: 60,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	buttonText: {
+		color: '#fff',
+		fontFamily: 'Avenir',
+		fontWeight: 'bold',
+		fontSize: 16,
+	}
 };
 
 class Food extends React.Component {
@@ -172,6 +204,7 @@ class Food extends React.Component {
 		};
 
 		this.goBackToPreviousScreen = this.goBackToPreviousScreen.bind(this);
+		this.externalButtonHandler = this.externalButtonHandler.bind(this);
 	}
 
 	componentWillMount() {
@@ -205,6 +238,14 @@ class Food extends React.Component {
 		this.props.navigator.pop({n: 1});
 	}
 
+	externalButtonHandler() {
+		if (this.state.data.source.sourceSiteUrl.indexOf('http://www.') !== -1) {
+			Linking.openURL(this.state.data.source.sourceSiteUrl);
+		} else {
+			Linking.openURL(`http://${this.state.data.source.sourceSiteUrl}`);
+		}
+	}
+
 	render() {
 		const growAnimation = {
 			transform: [{scale: this.animatedBackgroundGrowValue}],
@@ -221,17 +262,21 @@ class Food extends React.Component {
       )
     }
 		const data = this.state.data;
-		console.log(data);
 		return(
 			<View style={styles.container}>
 				<Header
-					title={'Recipe'}
+					title={this.props.headerTitle.toUpperCase()}
 					goBackToPreviousScreen={this.goBackToPreviousScreen}
 				/>
 				<View style={styles.imageContainer}>
 					<View style={styles.overlay} />
 					<Image
-						source={{uri: data.images[0].hostedLargeUrl}}
+						source={{
+							uri: (data.images[0].hostedLargeUrl || 
+										data.images[0].imageUrlsBySize['360'] || 
+										data.images[0].imageUrlsBySize['90']
+							)
+						}}
 						style={styles.image}
 					/>
 				</View>
@@ -288,7 +333,7 @@ class Food extends React.Component {
 									</G>
 								</Svg>
 								<Text style={styles.iconText}>
-									{data.numberOfServings} {data.numberOfServings === 1 ? 'person': 'people'}
+									{data.rating} {data.rating === 1 ? 'Star': 'Stars'}
 								</Text>
 							</View>
 						</View>
@@ -303,6 +348,41 @@ class Food extends React.Component {
 									</View>
 								))}
 							</View>
+						</View>
+						{data.flavors &&
+						Object.keys(data.flavors).length !== 0 &&
+							<View style={styles.infoSection}>
+								<Text style={styles.infoSectionTitle}>Flavors</Text>
+								<View style={styles.list}>
+									{Object.keys(data.flavors).map((key, index) => {
+										const flavorAmountStyle = {
+											width: `${(data.flavors[key] * 100).toFixed(1)}%`,
+											minWidth: '5%',
+										};
+										return (
+										<View
+											key={`${key}-${index}`}
+											style={[styles.listItem, styles.percentageListItem]}
+										>
+											<Text
+												style={[styles.listItemText, styles.listItemTextWidth]}
+											>
+												{key}
+											</Text>
+											<View style={[styles.amountPercentage, flavorAmountStyle]} />
+										</View>
+									)})}
+								</View>
+							</View>
+
+						}
+						<View style={styles.buttonContainer}>
+							<TouchableHighlight
+								style={styles.button}
+								onPress={this.externalButtonHandler}
+							>
+								<Text style={styles.buttonText}>Read Directions</Text>
+							</TouchableHighlight>
 						</View>
 					</View>
 				</ScrollView>

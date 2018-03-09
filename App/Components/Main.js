@@ -115,7 +115,7 @@ class Main extends React.Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    fetch(`${API.url}/recipes?${API.key}&${API.id}`).then(res => {
+    fetch(`${API.url}/recipes?${API.key}&${API.id}&q=popular`).then(res => {
       const data = JSON.parse(res['_bodyInit']).matches;
       this.setState({
         data,
@@ -137,14 +137,21 @@ class Main extends React.Component {
           easing: Easing.ease,
         }),
       ]).start();
-    });
+    }).catch(err => console.log(err));
   }
 
   checkItemInfoHandler(item) {
     this.props.navigator.push({
       component: Food,
-      title: item.cuisine,
-      passProps: { recipeId: item.id },
+      title: 'RECIPE',
+      passProps: { 
+        recipeId: item.id,
+        headerTitle: (
+          item.attributes &&
+          item.attributes.course &&
+          item.attributes.course[0]
+        ) || 'RECIPE',
+      },
       translucent: true,
       navigationBarHidden: true,
     });
